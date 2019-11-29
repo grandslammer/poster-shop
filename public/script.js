@@ -1,7 +1,7 @@
 let loadNum = 4;
 let watcher;
 
-setTimeout(() => {
+setTimeout(() => { // Simulates delay for "loading" on page load
     new Vue({
         el: "#app",
         data: {
@@ -68,6 +68,7 @@ setTimeout(() => {
                             console.log(response);
                             this.results = response.body;
                             this.lastSearch = this.search;
+                            this.search = "";
                             this.appendResults();
                             this.loading = false;
                         }.bind(this), 200); // Binds function scope to the parent scope
@@ -105,6 +106,6 @@ setTimeout(() => {
             }
         }
     });
-}, 3000);
+}, 2000); // 2 second load time
 
 
